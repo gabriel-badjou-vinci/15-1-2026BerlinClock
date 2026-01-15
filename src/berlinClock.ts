@@ -9,7 +9,7 @@ export class BerlinClockClass {
             fiveMinutes: "",
             minutes: "" 
         };
-        if(time.charAt(4) === '0'){
+        if(Number(time.charAt(4)) % 5 === 0){
             clock.minutes = "____";
         }
         if(time.charAt(4) === '1'){
