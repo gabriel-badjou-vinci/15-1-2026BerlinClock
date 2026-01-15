@@ -10,9 +10,9 @@ export class BerlinClockClass {
             minutes: "" 
         };
         this.isMultipleOfFive(time, clock);
-        this.newMethod(time, clock);
+        this.isMultipleOfOne(time, clock);
         
-        if(time.charAt(4) === '2'){
+        if (Number(time.charAt(4)) % 5 === 2) {
             clock.minutes = "YY__";
         }
         if(time.charAt(4) === '3'){
@@ -33,7 +33,7 @@ export class BerlinClockClass {
         return clock;
     }
 
-    private newMethod(time: string, clock: BerlinClock) {
+    private isMultipleOfOne(time: string, clock: BerlinClock) {
         if (Number(time.charAt(4)) % 5 === 1) {
             clock.minutes = "Y___";
         }
