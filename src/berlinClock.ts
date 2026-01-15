@@ -13,12 +13,14 @@ export class BerlinClockClass {
         this.isMultipleOfOne(time, clock);
         this.isMultipleOfTwo(time, clock);
         this.isMultipleOfTree(time, clock);
+        this.isMultipleOfFour(time, clock);        
+        return clock;
+    }
+
+    private isMultipleOfFour(time: string, clock: BerlinClock) {
         if (Number(time.charAt(4)) % 5 === 4) {
             clock.minutes = "YYYY";
         }
-       
-        
-        return clock;
     }
 
     private isMultipleOfTree(time: string, clock: BerlinClock) {
