@@ -1,43 +1,44 @@
 import { BerlinClock } from "./types";
 
-
-export const convertTimeToClock = (time:string):BerlinClock => {
-    let clock: BerlinClock = {
-        seconds: "",
-        fiveHours: "",
-        hours: "",
-        fiveMinutes: "",
-        minutes: "" 
-    };
-    if(time.charAt(4) === '0'){
-        clock.minutes = "____";
+export class BerlinClockClass {
+    convertTimeToClock = (time:string):BerlinClock => {
+        let clock: BerlinClock = {
+            seconds: "",
+            fiveHours: "",
+            hours: "",
+            fiveMinutes: "",
+            minutes: "" 
+        };
+        if(time.charAt(4) === '0'){
+            clock.minutes = "____";
+        }
+        if(time.charAt(4) === '1'){
+            clock.minutes = "Y___";
+        }
+        if(time.charAt(4) === '2'){
+            clock.minutes = "YY__";
+        }
+        if(time.charAt(4) === '3'){
+            clock.minutes = "YYY_";
+        }
+        if(time.charAt(4) === '4'){
+            clock.minutes = "YYYY";
+        }
+        if(time.charAt(4) === '5'){
+            clock.minutes = "____";
+        }
+        if(time.charAt(4) === '6'){
+            clock.minutes = "Y___";
+        }
+        if(time.charAt(4) === '7'){
+            clock.minutes = "YY__";
+        }
+        if(time.charAt(4) === '8'){
+            clock.minutes = "YYY_";
+        }
+        if(time.charAt(4) === '9'){
+            clock.minutes = "YYYY";
+        }
+        return clock;
     }
-    if(time.charAt(4) === '1'){
-        clock.minutes = "Y___";
-    }
-    if(time.charAt(4) === '2'){
-        clock.minutes = "YY__";
-    }
-    if(time.charAt(4) === '3'){
-        clock.minutes = "YYY_";
-    }
-    if(time.charAt(4) === '4'){
-        clock.minutes = "YYYY";
-    }
-    if(time.charAt(4) === '5'){
-        clock.minutes = "____";
-    }
-    if(time.charAt(4) === '6'){
-        clock.minutes = "Y___";
-    }
-    if(time.charAt(4) === '7'){
-        clock.minutes = "YY__";
-    }
-    if(time.charAt(4) === '8'){
-        clock.minutes = "YYY_";
-    }
-    if(time.charAt(4) === '9'){
-        clock.minutes = "YYYY";
-    }
-    return clock;
 }
