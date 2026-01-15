@@ -9,13 +9,17 @@ export class BerlinClockClass {
             fiveMinutes: "",
             minutes: "" 
         };
-        this.isMultipleOfFive(time, clock);
-        this.isMultipleOfOne(time, clock);
-        this.isMultipleOfTwo(time, clock);
-        this.isMultipleOfTree(time, clock);
-        this.isMultipleOfFour(time, clock);        
+        this.setSingleMinutes(time,clock);     
         return clock;
     }
+
+    private setSingleMinutes(time: string, clock: BerlinClock) {
+    this.isMultipleOfFive(time, clock);
+    this.isMultipleOfOne(time, clock);
+    this.isMultipleOfTwo(time, clock);
+    this.isMultipleOfTree(time, clock);
+    this.isMultipleOfFour(time, clock);
+}
 
     private isMultipleOfFour(time: string, clock: BerlinClock) {
         if (Number(time.charAt(4)) % 5 === 4) {
