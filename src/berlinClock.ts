@@ -10,9 +10,10 @@ export class BerlinClockClass {
             minutes: "" 
         };
         this.isMultipleOfFive(time, clock);
-        if(time.charAt(4) === '1'){
+        if (Number(time.charAt(4)) % 5 === 1) {
             clock.minutes = "Y___";
         }
+        
         if(time.charAt(4) === '2'){
             clock.minutes = "YY__";
         }
@@ -21,12 +22,6 @@ export class BerlinClockClass {
         }
         if(time.charAt(4) === '4'){
             clock.minutes = "YYYY";
-        }
-        if(time.charAt(4) === '5'){
-            clock.minutes = "____";
-        }
-        if(time.charAt(4) === '6'){
-            clock.minutes = "Y___";
         }
         if(time.charAt(4) === '7'){
             clock.minutes = "YY__";
@@ -45,4 +40,6 @@ export class BerlinClockClass {
             clock.minutes = "____";
         }
     }
+
+    
 }
